@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>John Doe Photography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="workstyles.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!--
+    Navigation
+    -->
+    <div class="hamburgler-menu">
+      <ul class="hamburgler-menu-list">
+        <li><a href="index.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div id="hamburgler" class="hamburgler-icon-wrapper">
+      <span class="hamburgler-icon"></span>
+    </div>
+
+    <!--
+    Mobile Gallery Buttons
+    -->
+    <div id="specialties">
+      <div id="buttons">
+        <button id="nature" type="button" onclick="nature()">nature</button>
+        <button id="wedding" type="button" onclick="wedding()">wedding</button>
+      </div>
+    </div>
+    <!--
+    Gallery
+    -->
+    <div id="gallery">
+      <div>
+        <img class="inline" id="main-img" src="images/nature/1.jpg">
+        <br>
+        <div class="gallery">
+            <img src="images/nature/2.jpg">
+            <img src="images/nature/3.jpg">
+            <img src="images/nature/4.jpg">
+            <img src="images/nature/5.jpg">
+            <img src="images/wedding/1.jpg">
+            <img src="images/wedding/2.jpg">
+            <img src="images/wedding/3.jpg">
+            <img src="images/wedding/5.jpg">
+            <img src="images/wedding/4.jpg">
+        </div>
+      </div>
+    </div>
+    <!--
+    Mobile Gallery
+    -->
+    <div id="mobile-gallery">
+      <div class="image" id="nature-img">
+        <img src="images/nature/1.jpg">
+        <img src="images/nature/2.jpg">
+        <img src="images/nature/3.jpg">
+        <img src="images/nature/4.jpg">
+        <img src="images/nature/5.jpg">
+      </div>
+      <div class="image" id="wedding-img">
+        <img src="images/wedding/1.jpg">
+        <img src="images/wedding/2.jpg">
+        <img src="images/wedding/3.jpg">
+        <img src="images/wedding/4.jpg">
+        <img src="images/wedding/5.jpg">
+      </div>
+    </div>
+    <script>
+    // Navigation
+
+    document.getElementById('hamburgler').addEventListener('click', checkNav);
+    window.addEventListener("keyup", function(e) {
+      if (e.keyCode == 27) closeNav();
+    }, false);
+
+    function checkNav() {
+      if (document.body.classList.contains('hamburgler-active')) {
+    closeNav();
+    } else {
+    openNav(); }
+    }
+    function closeNav() {
+      document.body.classList.remove('hamburgler-active');
+    }
+    function openNav() {
+      document.body.classList.add('hamburgler-active');
+    }
+
+    // Mobile Gallery Buttons
+    function nature() {
+        document.getElementById('wedding-img').style.display='none';
+        document.getElementById("nature-img").style.display = "block";
+    }
+    function wedding() {
+        document.getElementById('nature-img').style.display='none';
+        document.getElementById("wedding-img").style.display = "block";
+    }
+    </script>
+  </body>
+</html>
