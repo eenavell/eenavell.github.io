@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>John Doe Photography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="workstyles.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!--
+    Navigation
+    -->
+    <div class="hamburger-menu">
+      <ul class="hamburger-menu-list">
+        <li><a href="index.html">About</a></li>
+        <li><a href="work.html">Work</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div id="hamburger" class="hamburger-icon-wrapper">
+      <span class="hamburger-icon"></span>
+    </div>
+
+    <!--
+    Mobile Gallery Buttons
+    -->
+    <div id="specialties">
+      <div id="buttons">
+        <button id="nature" type="button" onclick="nature()">nature</button>
+        <button id="wedding" type="button" onclick="wedding()">wedding</button>
+      </div>
+    </div>
+    <!--
+    Gallery
+    -->
+    <div id="gallery">
+      <div>
+        <img id="preview" src="1.jpg">
+        <br>
+        <div class="gallery">
+            <img onmouseover="getElementById('preview').src=getElementById('2').src" id="2" src="2.jpg">
+            <img onmouseover="getElementById('preview').src=getElementById('3').src" id="3" src="3.jpg">
+            <img onmouseover="getElementById('preview').src=getElementById('4').src" id="4" src="4.jpg">
+            <img onmouseover="getElementById('preview').src=getElementById('5').src" id="5" src="5.jpg">
+            <img onmouseover="getElementById('preview').src=getElementById('11').src" id="11" src="11.jpg">
+            <img onmouseover="getElementById('preview').src=getElementById('22').src" id="22" src="22.jpg">
+            <img onmouseover="getElementById('preview').src=getElementById('33').src" id="33" src="33.jpg">
+            <img onmouseover="getElementById('preview').src=getElementById('55').src" id="55" src="55.jpg">
+            <img onmouseover="getElementById('preview').src=getElementById('44').src" id="44" src="44.jpg">
+        </div>
+      </div>
+    </div>
+    <!--
+    Mobile Gallery
+    -->
+    <div id="mobile-gallery">
+      <div class="image" id="nature-img">
+        <img src="1.jpg">
+        <img src="2.jpg">
+        <img src="3.jpg">
+        <img src="4.jpg">
+        <img src="5.jpg">
+      </div>
+      <div class="image" id="wedding-img">
+        <img src="11.jpg">
+        <img src="22.jpg">
+        <img src="33.jpg">
+        <img src="44.jpg">
+        <img src="55.jpg">
+      </div>
+    </div>
+    <script>
+    // Navigation
+
+    document.getElementById('hamburger').addEventListener('click', checkNav);
+    window.addEventListener("keyup", function(e) {
+      if (e.keyCode == 27) closeNav();
+    }, false);
+
+    function checkNav() {
+      if (document.body.classList.contains('hamburger-active')) {
+    closeNav();
+    } else {
+    openNav(); }
+    }
+    function closeNav() {
+      document.body.classList.remove('hamburger-active');
+    }
+    function openNav() {
+      document.body.classList.add('hamburger-active');
+    }
+
+    // Mobile Gallery Buttons
+    function nature() {
+        document.getElementById('wedding-img').style.display='none';
+        document.getElementById("nature-img").style.display = "block";
+    }
+    function wedding() {
+        document.getElementById('nature-img').style.display='none';
+        document.getElementById("wedding-img").style.display = "block";
+    }
+    </script>
+  </body>
+</html>

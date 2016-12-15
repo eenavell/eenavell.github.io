@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>John Doe Photography</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="contactstyles.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <!--
+    Navigation
+    -->
+    <div class="hamburger-menu">
+      <ul class="hamburger-menu-list">
+       <li><a href="index.html">About</a></li>
+       <li><a href="work.html">Work</a></li>
+       <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div id="hamburger" class="hamburger-icon-wrapper">
+      <span class="hamburger-icon"></span>
+    </div>
+    <!--
+    Landing Page
+    -->
+    <div id="landing-page">
+      <div class="left">
+        <img src="contact.jpg" class="animated fadeInLeftBig">
+      </div>
+      <div class="right">
+        <form>
+          <header><div id="border"><h1>CONTACT</h1></div></header>
+          <input type="text" name="firstname" placeholder="First Name"><br>
+          <input type="text" name="lastname" placeholder="Last Name"><br>
+          <input type="email" name="email" placeholder="Email"><br>
+          <input type="text" name="message" placeholder="Message"><br>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+    <script>
+    // Navigation
+
+    document.getElementById('hamburger').addEventListener('click', checkNav);
+    window.addEventListener("keyup", function(e) {
+      if (e.keyCode == 27) closeNav();
+    }, false);
+
+    function checkNav() {
+      if (document.body.classList.contains('hamburger-active')) {
+    closeNav();
+    } else {
+    openNav(); }
+    }
+    function closeNav() {
+      document.body.classList.remove('hamburger-active');
+    }
+    function openNav() {
+      document.body.classList.add('hamburger-active');
+    }
+
+    // Mobile Gallery Buttons
+    function nature() {
+        document.getElementById('wedding-img').style.display='none';
+        document.getElementById("nature-img").style.display = "block";
+    }
+    function wedding() {
+        document.getElementById('nature-img').style.display='none';
+        document.getElementById("wedding-img").style.display = "block";
+    }
+    </script>
+  </body>
+</html>
